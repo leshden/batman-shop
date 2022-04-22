@@ -1,44 +1,30 @@
-import Catalog from './components/catalog/catalog';
+import Home from './routes/home/home';
+import {Routes, Route, Outlet} from 'react-router-dom';
 
+function Menu() {
+  return (
+    <div>
+      <h1>Menu</h1>
+      <Outlet />
+    </div>
+  );
+}
+
+const Shop = () => {
+  return(
+    <h1>Shop page</h1>
+  );
+}
 
 function App() {
-
-  const categories = [
-    {
-      id: 1,
-      title: 'Маски',
-      imageUrl: 'https://i.ibb.co/58rtkM1/mask.jpg',
-    },
-
-    {
-      id: 2,
-      title: 'Костюмы',
-      imageUrl: 'https://i.ibb.co/yY0g6VK/suit.jpg',
-    },
-
-    {
-      id: 3,
-      title: 'Обувь',
-      imageUrl: 'https://i.ibb.co/CmFmQSq/shoes.jpg',
-    },
-
-    {
-      id: 4,
-      title: 'Дамы',
-      imageUrl: 'https://i.ibb.co/jWKpSWx/women.jpg',
-    },
-
-    {
-      id: 5,
-      title: 'Мужчины',
-      imageUrl: 'https://i.ibb.co/NsZvwJG/men.jpg',
-    },
-
-  ];
-
-  return (
-    <Catalog categories={categories} />
-  );
+    return(
+      <Routes>
+        <Route path='/' element={<Menu />}>
+          <Route index element={<Home />} />
+          <Route path='shop' element={<Shop />} />
+        </Route>
+      </Routes>
+    );
 }
 
 export default App;
