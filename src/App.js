@@ -1,14 +1,6 @@
 import Home from './routes/home/home';
-import {Routes, Route, Outlet} from 'react-router-dom';
-
-function Menu() {
-  return (
-    <div>
-      <h1>Menu</h1>
-      <Outlet />
-    </div>
-  );
-}
+import {Routes, Route} from 'react-router-dom';
+import Menu from './routes/menu/menu';
 
 const Shop = () => {
   return(
