@@ -14,6 +14,9 @@ function Menu() {
           <Link className='menu-link' to='/shop'>
             Магазин
           </Link>
+          <Link className='menu-link' to='/sign-in'>
+            Войти
+          </Link>
         </div>
       </div>
       <Outlet />
