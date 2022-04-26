@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import FormInput from '../../components/form-input/form-input';
+import './sign-up.scss';
 
 const defaultFormFields = {
   name: '',
@@ -29,17 +31,38 @@ function SignUp() {
   }
 
   return(
-    <div>
-      <h1>Регистрация</h1>
+    <div className='sign-up-container'>
+      <h2> У Вас есть аккаунт ?</h2>
+      <span>Регистрация</span>
       <form onSubmit={handleSubmit}>
-        <label>Имя</label>
-        <input type='text' required onChange={handleChange} name='name' value={name}></input>
-        <label>Email</label>
-        <input type='email' required onChange={handleChange} name='email' value={email}></input>
-        <label>Пароль</label>
-        <input type='password' required onChange={handleChange} name='password' value={password}></input>
-        <label>Подтвердить пароль</label>
-        <input type='password' required onChange={handleChange} name='confirmPassword' value={confirmPassword}></input>
+        <FormInput label='Имя'
+                   type='text'
+                   required
+                   onChange={handleChange}
+                   name='name'
+                   value={name}/>
+
+        <FormInput label='Email'
+                   type='email'
+                   required
+                   onChange={handleChange}
+                   name='email'
+                   value={email}/>
+
+        <FormInput label='Пароль'
+                   type='password'
+                   required
+                   onChange={handleChange}
+                   name='password'
+                   value={password}/>
+
+        <FormInput label='Подтвердить пароль'
+                   type='password'
+                   required
+                   onChange={handleChange}
+                   name='confirmPassword'
+                   value={confirmPassword}/>
+
         <button type='submit'>Регистрация</button>
       </form>
     </div>
