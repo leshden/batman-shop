@@ -1,7 +1,8 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import FormInput from '../../components/form-input/form-input';
 import Button from '../../components/button/button';
 import './sign-in.scss';
+import {UserContext} from '../../contexts/user';
 
 const defaultFormFields = {
   email: '',
@@ -13,8 +14,14 @@ function SignIn() {
   const[formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    let user = {name: 'name'};
+
+    setCurrentUser(user);
   }
 
   const handleChange = (event) => {

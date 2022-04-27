@@ -1,7 +1,9 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import FormInput from '../../components/form-input/form-input';
 import Button from '../../components/button/button';
 import './sign-up.scss';
+import {UserContext} from '../../contexts/user';
+
 
 const defaultFormFields = {
   name: '',
@@ -17,6 +19,8 @@ function SignUp() {
   const[formFields, setFormFields] = useState(defaultFormFields);
   const {name, email, password, confirmPassword} = formFields;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -24,6 +28,9 @@ function SignUp() {
       alert('Пароли не совпадают');
       return;
     }
+
+    let user = {name: 'name'};
+    setCurrentUser(user);
   }
 
   const handleChange = (event) => {

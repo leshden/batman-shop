@@ -1,9 +1,18 @@
 import './menu.scss';
-import {Fragment} from 'react';
+import {Fragment, useContext} from 'react';
 import {Outlet, Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../assets/logo.svg'
+import {UserContext} from '../../contexts/user';
+
 
 function Menu() {
+  const {currentUser, setCurrentUser} = useContext(UserContext);
+  console.log(currentUser);
+
+  const signOutHandler = () => {
+    setCurrentUser(null);
+  }
+
   return (
     <Fragment>
       <div className='menu'>
@@ -14,9 +23,13 @@ function Menu() {
           <Link className='menu-link' to='/shop'>
             Магазин
           </Link>
-          <Link className='menu-link' to='/sign-in'>
-            Войти
-          </Link>
+          {
+            currentUser ? (<span className='menu-link' onClick={signOutHandler}> Выйти </span>)
+                        : (<Link className='menu-link' to='/sign-in'>
+              Войти
+            </Link>)
+          }
+
         </div>
       </div>
       <Outlet />
