@@ -1,20 +1,21 @@
 import { signInWithGooglePopup } from '../../utils/firebase/firebase';
 import SignUp from '../../components/sign-up/sign-up';
+import SignIn from '../../components/sign-in/sign-in';
+import './autorisation.scss';
 
 
-function SignIn() {
+function Autorisation() {
   const logGoogleUser = async () => {
     const response = await signInWithGooglePopup();
     console.log(response);
   }
 
   return(
-    <div>
-      <h1>Sight IN</h1>
-      <button onClick={logGoogleUser}>Войти</button>
+    <div className='autorisation-container'>
+      <SignIn />
       <SignUp />
     </div>
   );
 }
 
-export default SignIn
+export default Autorisation
