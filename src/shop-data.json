@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Mask 1",
+    "imageUrl": "https://i.ibb.co/7KjnJvJ/mask1.jpg",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "name": "Mask 2",
+    "imageUrl": "https://i.ibb.co/bQ5yypy/mask2.jpg",
+    "price": 18
+  },
+  {
+    "id": 3,
+    "name": "Mask 3",
+    "imageUrl": "https://i.ibb.co/JCTwgG7/mask3.jpg",
+    "price": 35
+  },
+  {
+    "id": 4,
+    "name": "Mask 4",
+    "imageUrl": "https://i.ibb.co/WnG9Sxj/mask4.jpg",
+    "price": 25
+  },
+  {
+    "id": 5,
+    "name": "Mask 5",
+    "imageUrl": "https://i.ibb.co/CJVTm83/mask5.jpg",
+    "price": 18
+  },
+  {
+    "id": 6,
+    "name": "Mask 6",
+    "imageUrl": "https://i.ibb.co/0JgHGHx/mask6.jpg",
+    "price": 14
+  },
+  {
+    "id": 7,
+    "name": "Mask 7",
+    "imageUrl": "https://i.ibb.co/BsgHT2T/mask7.jpg",
+    "price": 18
+  },
+  {
+    "id": 8,
+    "name": "Mask 8",
+    "imageUrl": "https://i.ibb.co/q5Z1wMR/mask8.jpg",
+    "price": 14
+  },
+  {
+    "id": 9,
+    "name": "Mask 9",
+    "imageUrl": "https://i.ibb.co/Xb3Mzcj/mask9.jpg",
+    "price": 16
+  }
+]
