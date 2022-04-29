@@ -3,11 +3,13 @@ import {Fragment, useContext} from 'react';
 import {Outlet, Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../assets/logo.svg'
 import {UserContext} from '../../contexts/user';
-
+import {CartContext} from '../../contexts/cart';
+import CartIcon from '../../components/cart-icon/cart-icon';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 
 function Menu() {
   const {currentUser, setCurrentUser} = useContext(UserContext);
-  console.log(currentUser);
+  const {isCartOpen} = useContext(CartContext);
 
   const signOutHandler = () => {
     setCurrentUser(null);
@@ -29,8 +31,9 @@ function Menu() {
               Войти
             </Link>)
           }
-
+          <CartIcon />
         </div>
+        { isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
