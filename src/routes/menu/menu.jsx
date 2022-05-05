@@ -1,4 +1,4 @@
-import './menu.scss';
+import {MenuContainer, LogoContainer, MenuLinks, MenuLink, LogImg} from './menu.styles';
 import {Fragment, useContext} from 'react';
 import {Outlet, Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../assets/logo.svg'
@@ -17,24 +17,24 @@ function Menu() {
 
   return (
     <Fragment>
-      <div className='menu'>
-        <Link className='menu-logo' to='/'>
-          <Logo className='logo' />
-        </Link>
-        <div className='menu-links'>
-          <Link className='menu-link' to='/shop'>
+      <MenuContainer>
+        <LogoContainer to='/'>
+          <LogImg />
+        </LogoContainer>
+        <MenuLinks>
+          <MenuLink to='/shop'>
             Магазин
-          </Link>
+          </MenuLink>
           {
-            currentUser ? (<span className='menu-link' onClick={signOutHandler}> Выйти </span>)
-                        : (<Link className='menu-link' to='/sign-in'>
+            currentUser ? (<MenuLink onClick={signOutHandler}> Выйти </MenuLink>)
+                        : (<MenuLink to='/sign-in'>
               Войти
-            </Link>)
+            </MenuLink>)
           }
           <CartIcon />
-        </div>
+        </MenuLinks>
         { isCartOpen && <CartDropdown />}
-      </div>
+      </MenuContainer>
       <Outlet />
     </Fragment>
   );
