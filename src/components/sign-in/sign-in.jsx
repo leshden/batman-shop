@@ -1,6 +1,6 @@
 import {useState, useContext} from 'react';
 import FormInput from '../../components/form-input/form-input';
-import Button from '../../components/button/button';
+import Button, { ButtonsTypeClasses } from '../../components/button/button';
 import './sign-in.scss';
 import {UserContext} from '../../contexts/user';
 
@@ -50,7 +50,7 @@ function SignIn() {
 
         <div className='buttons-container'>
           <Button type='submit'>Войти</Button>
-          <Button buttonType='google' type='submit'> Google</Button>
+          <Button buttonType={ButtonsTypeClasses.google} type='submit'> Google</Button>
         </div>
       </form>
     </div>
