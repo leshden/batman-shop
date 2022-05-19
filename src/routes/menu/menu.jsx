@@ -2,17 +2,20 @@ import {MenuContainer, LogoContainer, MenuLinks, MenuLink, LogImg} from './menu.
 import {Fragment, useContext} from 'react';
 import {Outlet, Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../assets/logo.svg'
-import {UserContext} from '../../contexts/user';
+//import {UserContext} from '../../contexts/user';
 import {CartContext} from '../../contexts/cart';
 import CartIcon from '../../components/cart-icon/cart-icon';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
+import {selectCurrentUser} from '../../store/user/user.selector';
+import {useSelector} from 'react-redux';
 
 function Menu() {
-  const {currentUser, setCurrentUser} = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
+  //const {currentUser, setCurrentUser} = useContext(UserContext);
   const {isCartOpen} = useContext(CartContext);
 
   const signOutHandler = () => {
-    setCurrentUser(null);
+    //setCurrentUser(null);
   }
 
   return (
